@@ -97,6 +97,16 @@
             event.preventDefault();
         });
     </script>
+    <script>
+        // Mencegah penggunaan tombol Print Screen
+        document.addEventListener('keyup', function (e) {
+            if (e.key === 'PrintScreen' || e.keyCode === 44) {
+                // Mengosongkan clipboard (hanya berfungsi di browser modern)
+                navigator.clipboard.writeText('');
+                alert('Mohon maaf, fitur tangkapan layar dinonaktifkan di website ini.');
+            }
+        });
+    </script>
     <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
 
