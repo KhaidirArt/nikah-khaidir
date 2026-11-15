@@ -739,23 +739,35 @@
         </div>
     </div>
     <!-- Welcome Page -->
-    <!-- Hapus class 'bg-white-black' dan tambahkan 'background-color: #FFFDD0;' pada style -->
-    <div class="loading-page" id="welcome" style="opacity: 0; background-color: #FAEBD7;">
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <!-- Tambahkan style="z-index: 0;" agar cover berada di paling belakang -->
-            <img src="./assets/images/cover-lingkaran.jpg" alt="bg" class="position-absolute opacity-100 top-0 start-50 translate-middle-x h-100 w-auto" style="z-index: 0;">
-            <!-- Tambahkan position-relative dan style="z-index: 1;" agar konten berada di depan cover -->
-            <div class="d-flex flex-column text-center position-relative" style="z-index: 1;">
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
-                <img src="./assets/images/placeholder.webp" data-src="./assets/images/khaidir-gita.jpeg" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Khaidir &amp; Gita</h2>
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
-                <button type="button" class="btn shadow rounded-4 mt-3 mx-auto" style="background-color: #FAEBD7; color: #2C3531; border: 1px solid #EAE5D9;" onclick="undangan.guest.open(this)">
-    <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan
-</button>
+<div class="loading-page" id="welcome" style="opacity: 0; background-color: #FAEBD7; position: relative; overflow: hidden;">
+    <div class="d-flex justify-content-center align-items-center vh-100 w-100 overflow-y-auto">
+        
+        <!-- 1. Background Cover -->
+        <!-- Menggunakan object-fit: cover dan object-position: center agar lingkaran emas SELALU berada tepat di tengah layar apapun ukurannya -->
+        <img src="./assets/images/cover-lingkaran.jpg" alt="bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0;">
+        
+        <!-- 2. Kontainer Konten -->
+        <div class="d-flex flex-column text-center position-relative w-100 px-3" style="z-index: 1;">
+            
+            <h2 class="font-esthetic mb-3" style="font-size: clamp(2rem, 5vw, 2.5rem); color: #FAEBD7; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">The Wedding Of</h2>
+            
+            <!-- 3. Foto Couple -->
+            <!-- Menggunakan satuan 'vmin' agar foto membesar/mengecil mengikuti proporsi lingkaran emas di background -->
+            <div class="mx-auto mb-3 shadow" style="width: 55vmin; height: 55vmin; border-radius: 50%; overflow: hidden;">
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/khaidir-gita.jpeg" alt="couple" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
             </div>
+            
+            <h2 class="font-esthetic mb-3" style="font-size: clamp(2.2rem, 6vw, 3rem); color: #FAEBD7; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">Khaidir &amp; Gita</h2>
+            
+            <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i" class="mb-3" style="color: #4A554E;"></div>
+            
+            <button type="button" class="btn shadow rounded-pill mt-2 mx-auto px-4 py-2" style="background-color: #FAEBD7; color: #2C3531; border: 1px solid #EAE5D9; font-weight: 500;" onclick="undangan.guest.open(this)">
+                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan
+            </button>
+            
         </div>
     </div>
+</div>
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
         <!-- Theme Button -->
