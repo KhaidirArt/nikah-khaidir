@@ -789,26 +789,33 @@
     </div>
 
     <!-- Loading Page -->
-    <div class="loading-page bg-white-black" id="loading" style="opacity: 1;">
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <div class="d-flex flex-column width-loading text-center">
-                <img src="./assets/images/placeholder.webp" data-src="./assets/images/love.png" data-fetch-img="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
-                <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
-                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
-                </div>
-                <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;">Booting application...</small>
-                <noscript>
-                    <small class="mt-1 text-danger">Sorry, this invitation requires javascript to work</small>
-                </noscript>
+<div class="loading-page bg-white-black position-relative" id="loading" style="opacity: 1;">
+    
+    <!-- Gambar Background -->
+    <img src="./assets/images/dalem.jpg" alt="bg" class="position-absolute opacity-100 top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: 0;">
+
+    <!-- Konten Loading Bar (Tambahkan position-relative dan z-index: 1) -->
+    <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto position-relative" style="z-index: 1;">
+        <div class="d-flex flex-column width-loading text-center">
+            <img src="./assets/images/placeholder.webp" data-src="./assets/images/love.png" data-fetch-img="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
+            <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
+                <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
             </div>
-        </div>
-        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
-            <div class="d-flex flex-column">
-                <small>"Dari doa yang sama"</small>
-                <small>"kita di pertemukan dalam ikatan yang suci di tahun 2026💞"</small>
-            </div>
+            <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;">Booting application...</small>
+            <noscript>
+                <small class="mt-1 text-danger">Sorry, this invitation requires javascript to work</small>
+            </noscript>
         </div>
     </div>
+
+    <!-- Konten Teks Bawah (Tambahkan z-index: 1) -->
+    <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0; z-index: 1;">
+        <div class="d-flex flex-column text-white"> <!-- Saya tambahkan text-white opsional agar teks terbaca di atas gambar -->
+            <small>"Dari doa yang sama"</small>
+            <small>"kita di pertemukan dalam ikatan yang suci di tahun 2026💞"</small>
+        </div>
+    </div>
+</div>
 
     <!-- Modal Image -->
     <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
