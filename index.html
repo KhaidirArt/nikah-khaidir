@@ -97,6 +97,17 @@
             event.preventDefault();
         });
     </script>
+    <script>
+    window.addEventListener('scroll', function () {
+        const navbar = document.getElementById('navbar-menu');
+        // Navbar baru muncul setelah di-scroll ke bawah lebih dari 150px
+        if (window.scrollY > 150) {
+            navbar.classList.remove('d-none');
+        } else {
+            navbar.classList.add('d-none');
+        }
+    });
+</script>
     <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
 
@@ -130,7 +141,8 @@
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home -->
-                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
+                <!-- Ubah baris pembuka section home menjadi seperti ini -->
+                    <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0 min-vh-100 d-flex flex-column justify-content-center">
                     <img src="./assets/images/placeholder.webp" data-src="./assets/images/prewedding.jpg" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
                     <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
@@ -721,7 +733,7 @@
             </main>
 
             <!-- Navbar Bottom -->
-            <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu">
+            <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0 d-none" id="navbar-menu">
                 <ul class="navbar-nav nav-justified w-100 align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#home">
